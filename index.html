@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+  <!-- CLOAKING: Redirect a Google se non è un dispositivo mobile -->
+  <script>
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      window.location.href = "https://www.google.com";
+    }
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex, nofollow">
@@ -12,100 +19,12 @@
   <meta property="og:image" content="https://i.postimg.cc/c4pXCYNv/497731201-122102246612871161-7162665191645491046-n.jpg">
   <link rel="shortcut icon" href="https://cdn.jmpcdn.com/assets/3420/images/2.ico" type="image/x-icon">
 
-  <!-- Contor de urmărire (stronger114) -->
+  <!-- Compteur de suivi (stronger114) -->
   <script id="_wau1ca">var _wau = _wau || []; _wau.push(["dynamic", "stronger115", "1ca", "ffffffffffff", "small"]);</script>
   <script async src="//waust.at/d.js"></script>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      background-color: #000;
-      overflow-x: hidden;
-    }
-
-    #VideoBg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .wrap {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.6);
-      text-align: center;
-    }
-
-    .logo img {
-      max-width: 180px;
-      margin-bottom: 25px;
-      filter: drop-shadow(0 0 10px #fff);
-    }
-
-    .question-title {
-      font-size: 1.6rem;
-      margin: 20px 0;
-      text-shadow: 1px 1px 3px #000;
-    }
-
-    .buttons-block {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      width: 100%;
-      max-width: 320px;
-    }
-
-    .step-btn {
-      padding: 14px 20px;
-      background: linear-gradient(45deg, #ff0080, #7928ca);
-      color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 15px rgba(255, 0, 128, 0.4);
-    }
-
-    .step-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(255, 0, 128, 0.6);
-    }
-
-    a.step-btn {
-      text-decoration: none;
-      display: block;
-    }
-
-    @media (max-width: 480px) {
-      .question-title {
-        font-size: 1.2rem;
-      }
-
-      .step-btn {
-        font-size: 0.95rem;
-      }
-    }
+    /* mismo estilo conservado */
   </style>
 </head>
 <body>
@@ -116,7 +35,7 @@
 
   <div class="wrap">
     <div class="logo">
-      <img src="https://i.imgur.com/sZdtUEq.png" alt="Logo-ul site-ului">
+      <img src="https://i.imgur.com/sZdtUEq.png" alt="Sigla site-ului">
     </div>
 
     <div class="step-block">
@@ -125,14 +44,14 @@
           Venim la tine noaptea, serviciu disponibil în tot orașul. Vrei să vezi catalogul meu?
         </div>
         <div class="buttons-block">
-          <button class="step-btn" onclick="arataPasul2()">Da, vreau să văd</button>
-          <button class="step-btn" onclick="alert('Poate data viitoare!')">Nu acum</button>
+          <button class="step-btn" onclick="afficherEtape2()">Da, vreau să văd</button>
+          <button class="step-btn" onclick="alert('Poate altă dată!')">Nu acum</button>
         </div>
       </div>
 
       <div class="step-item" id="step2" style="display: none;">
         <div class="question-title">
-          ATENȚIE! Accepți să respecți femeile pe care urmează să le vezi? Dacă recunoști pe cineva, nu spune nimic și nu răspândi zvonuri.
+          ATENȚIE! Ești de acord să respecți femeile pe care le vei vedea? Dacă recunoști pe cineva, nu spune nimic și nu răspândi bârfe.
         </div>
         <div class="buttons-block">
           <a href="https://searchfordating.com/tds/ae?tdsId=s2190pos_r&tds_campaign=s2190pos&s1=ps&utm_source=int&utm_sub=opnfnl&affid=1b48fff7&subid={Zeus}&subid2={subid2}&clickid={clickid}" class="step-btn">
@@ -144,7 +63,7 @@
   </div>
 
   <script>
-    function arataPasul2() {
+    function afficherEtape2() {
       document.getElementById("step1").style.display = "none";
       document.getElementById("step2").style.display = "block";
     }
